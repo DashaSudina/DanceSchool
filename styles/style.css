@@ -1,0 +1,797 @@
+@font-face{ /* Подключаем шрифт */
+  font-family: 'ptserifitalic'; /* Подключаем шрифт */
+  src: url('../fonts/ptserifitalic.eot'); /* Подключаем шрифт */
+  src: url('../fonts/ptserifitalic.eot?iefix') format('eot'), /* Подключаем шрифт */
+  url('../fonts/ptserifitalic.ttf') format('truetype'), /* Подключаем шрифт */
+  url('../fonts/ptserifitalic.svg#webfont') format('svg'); /* Подключаем шрифт */
+  font-weight: normal; /* Подключаем шрифт */
+  font-style: normal; /* Подключаем шрифт */
+}
+@font-face{ /* Подключаем шрифт */
+  font-family: 'ptserifbolditalic'; /* Подключаем шрифт */
+  src: url('../fonts/ptserifbolditalic.eot'); /* Подключаем шрифт */
+  src: url('../fonts/ptserifbolditalic.eot?iefix') format('eot'), /* Подключаем шрифт */
+  url('../fonts/ptserifbolditalic.ttf') format('truetype'), /* Подключаем шрифт */
+  url('../fonts/ptserifbolditalic.svg#webfont') format('svg'); /* Подключаем шрифт */
+  font-weight: normal; /* Подключаем шрифт */
+  font-style: normal; /* Подключаем шрифт */
+}
+html { /* HTML */
+  overflow-x: hidden; /* запрещаем прокручивание сайта по оси х */
+  height: 100%; /* по всей длинне экрана */
+  width: 100%; /* по всей ширине экрана */
+}
+h1{
+  font-family: 'ptserifbolditalic'; /* шрифт */
+  text-align:center; /* позиционирование текста по центру */
+  width: 100%; /* ширина */
+  font-size: 40px; /* размер шрифта */
+  margin-top: 30px; /* внешний отступ */
+  margin-bottom: 20px; /* внешний отступ */
+  z-index: 999; /* позиционирование */
+}
+h2{
+  font-family: 'ptserifbolditalic'; /* шрифт */
+  font-size: 34px; /* размер шрифта */
+}
+div { /* Все DIV */
+  box-sizing: border-box; /* включаем border в размер div */
+}
+body { /* Тело сайта */ 
+  font-family: 'ptserifitalic'; /* шрифт */
+  text-align:center; /* позиционирование текста по центру */
+  background-image: url(background.jpg); /* цвет фона rgba(255,255,255,1); */
+  margin: 0; /* внешний отступ */
+  padding: 0; /* внутренний отступ */
+  height: 100%; /* длинна */
+  width: 100%; /* ширина */
+}
+a { /* ссылки */
+  color: #000; /* цвет шрифта */
+  text-decoration: none; /* убираем подчеркивание */
+}
+hr{
+	z-index: 999; /* позиционирование */
+	background-color: #000; /* фон */
+	height: 1px; /* высота */
+}
+p { /* абзацы */
+  text-align: justify; /* текст по ширине */
+  color: #000; /* цвет шрифта */
+  padding: 0; /* внутренний отступ */
+  font-size: 18px; /* размер шрифта */
+}
+p img { /* картинки в абзацах */
+  text-align: center; /* позиционирование текста по центру */
+}
+ul { /* список */
+  list-style: none; /* убираем точки */
+  margin: 0; /* внешний отступ */
+  padding-left: 0; /* внутренний отступ */
+}
+* a:hover{ /* выделение строки списка при наведении */
+  text-decoration:none; /* убираем подчеркивания */
+}
+table { /* таблица */
+  width: 100%; /* ширина */
+  height: 100%; /* длинна */
+}
+table p{ /* абзацы в таблице */
+  text-align: center; /* позиционирование текста по центру */
+}
+iframe{ /* фреймы */
+  background-color: #212529; /* цвет фона */
+  border:2px solid #212529; /* граница */
+}
+b{ /* толщина */
+  font-weight:bold; /* толщина шрифта */
+}
+footer{ /* футер */
+  position: relative; /* относительное расположение */
+  bottom: 0; /* прижимаем к низу */
+  right: 0; /* прижимаем к левой части экрана */
+  left: 0; /* прижимаем к левой части экрана */
+  color: #fff; /* белый цвет текста */
+  width: 100%; /* на всю ширину экрана */
+  padding-bottom: 20px; /* внутренний отступ снизу */
+  background-color: rgba(33, 37, 41, 1); /* цвет фона */
+  z-index: 999; /* позиционирование */
+}
+.dropdown-menu{
+  border:0; /* граница */
+  width: 100%; /* ширина */
+  border-radius: 0; /* убираем сглаживание углов */
+  text-align: center; /* позиционирование текста */
+  padding: 10px 0 0 0; /* внутренний отступ */
+}
+.topMenu{ /* подменю */
+  width: 100%; /* по всей ширине */
+  height: 117px; /* высота блока */
+}
+.navbar{ /* меню */
+  background-color: rgba(208, 173, 120,0.9); /* цвет фона */
+  position: fixed; /* фиксированное расположение */
+  z-index: 99999; /* позиционирование */
+  border-bottom: 10px rgba(33, 37, 41, 1); /* граница снизу */
+  box-shadow: 0px 4px 20px 2px rgba(33, 37, 41, 0.7); /* тень */
+  width: 100%; /* по всей ширине */
+  font-size: 18px; /* размер шрифта */
+  padding: 0; /* внутренний отступ */
+  margin: 0; /* внешний отступ */
+  top:0; /* прижимаем к верху */
+}
+.nav-link{ /* ссылки меню */
+  border-top: 1px solid rgba(255, 255, 255,0.5); /* граница */
+  color: rgba(33, 37, 41, 1); /* цвет текста */
+  padding: 8px 2px; /* внутренний отступ */
+  border-bottom: 1px solid rgba(255, 255, 255,0.5); /* граница */
+}
+.nav-link:hover{ /* наведение на ссылки в меню */
+  background-color: rgba(255, 255, 255,0.2); /* цвет фона */
+  border-top: 1px solid #fff; /* граница */
+  border-bottom: 1px solid #fff; /* граница */
+}
+.mr-auto, .mx-auto{ /* авто исчезновение меню */
+  position: relative; /* относительное расположение */
+  margin: 0; /* внешний отступ */
+  right: 0; /* прижимаем к правому боку */
+  padding-left: 10px; /* внутренний отступ */
+  padding-right: 10px; /* внутренний отступ */
+}
+.show{
+  margin-top: 0; /* внешний отступ */
+  padding: 0; /* внутренний отступ */
+}
+.logo{ /* логотип */
+  width: 80px; /* ширина */
+  height: 80px; /* длинна */
+  margin: 10px 0 0 30px; /* внешний отступ */
+  position: absolute; /* абсолютное расположение */
+  z-index: 9999; /* позиционирование */
+}
+.logoText{ /* текст логотипа */
+  margin: 10px 0 10px 100px; /* внешний отступ */
+  width: 150px; /* ширина */
+  z-index: 9999999; /* позиционирование */
+}
+.logo:hover{ /* эффект при наведении на логотип */
+  text-decoration: none; /* убираем подчеркивание */
+}
+.photo{ /* фото */
+  position: relative; /* относительное расположение */
+  max-width: 330px; /* максимальная ширина */
+  margin: 0 auto; /* внешний отступ */
+  margin-bottom: 20px; /* внешний отступ */
+  height: 450px; /* длинна */
+  z-index: 999; /* позиционирование */
+  transform: translate(-50%, -50%); /* анимация */
+  display: block; /* блочное отображение */
+}
+.photo img{ /* фото */
+  object-fit: cover; /* повторение */
+  max-width: 330px; /* максимальная ширина */
+  margin: 0 auto; /* внешний отступ */
+  height: 450px; /* длинна */
+  z-index: 999; /* позиционирование */
+  box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2); /* тень */
+  display: block; /* блочное отображение */
+  transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1); /* анимация */
+}
+.photo:hover img{ /* эффект при наведении на фото */
+  box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1); /* тень */
+}
+.photo .glow-wrap{ /* эффект глянца */
+  overflow: hidden; /* прокрутка по вертикали */
+  position: absolute; /* абсолютное позиционирование */
+  width: 100%; /* ширина */
+  height: 100%; /* длинна */
+  top: 0; /* положение относительно верха */
+  margin-top: -10px; /* внешний отступ */
+}
+.photo .glow{ /* эффект глянца */
+  display: block; /* блочное отображение */
+  position:absolute; /* абсолютное позиционирование */
+  width: 40%; /* ширина */
+  height: 200%; /* длинна */
+  background: rgba(255,255,255,.2); /* фон */
+  top: 0; /* расположение относительно верха */
+  filter: blur(5px); /* фильтр */
+  transform: rotate(45deg) translate(-450%, 0); /* анимация */
+  transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1); /* анимация */
+}
+.photo:hover .glow{ /* эффект при наведении на фото */
+  transform: rotate(45deg) translate(450%, 0); /* анимация */
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1); /* анимация */
+}
+.photo:hover img,
+.photo:hover .glow-wrap{ /* эффект при наведении на фото */
+  margin-top: 0; /* внешний отступ */
+}
+.textAlign{ /* выравнивание текста */
+  position: relative; /* относительное расположение */
+  padding: 28px;/* внутренний отступ */
+  color: #000; /* цвет */
+  margin: 0; /* внешний отступ */
+  z-index: 999; /* позиционирование */
+  background-color: rgba(208, 173, 120,0.7); /* цвет фона */
+} 
+.textAlign2{ /* выравнивание текста */
+  position: relative; /* относительное расположение */
+  padding: 28px;/* внутренний отступ */
+  color: #000; /* цвет */
+  background-color: rgba(208, 173, 120,0.7); /* цвет фона */
+  margin-bottom: 20px; /* внешний отступ */
+  z-index: 999; /* позиционирование */
+} 
+.pngaist{ /* заголовок в слайдере */
+  position: absolute; /* абсолютное расположение */
+  display: block; /* отображаем как блок */
+  width: 80%; /* ширина */
+  top:0; /* отображение относительно верха */
+  margin: 150px 10%; /* внешний отступ */
+  z-index: 50; /* позиционирование */
+}
+.pngaist2{ /* картинка в "Ассоциация" */
+  margin: 0 auto; /* внешний отступ */
+  padding-bottom: 20px; /* внутрений отступ */
+  height: 100%; /* высота */
+}
+.imgup{ /* картинки в футере */
+  width: 50px; /* ширина */
+  height: 50px; /* высота */
+  margin: 25px 10px; /* внешний отступ */
+}
+.icons2{ /* иконки в "Контакты" */
+  width: 50px; /* ширина */
+}
+.meropriatia{ /* мероприятия */
+  position: relative; /* относительное расположение */
+  width: 100%; /* ширина */
+  height: 330px; /* высота */
+  margin: 0; /* внешний отступ */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 30px; /* тень */
+  z-index: 999; /* позиционирование */
+}
+.mr1{ /* мероприятие */
+  background-image: url(/images/event-1-fit.jpg); /* фон */
+}
+.mr3{ /* мероприятие */
+  background-image: url(/images/event-3-germany.jpg); /* фон */
+}
+.mr2{ /* мероприятие */
+  background-image: url(/images/event-2-tournament.jpg); /* фон */
+}
+.tableMeropriatia{ /* таблица мероприятий */
+  margin: 380px auto 30px; /* внешний отступ */
+  padding: 10px 0; /* внутренний отступ */
+}
+.blog{ /* блог */
+  position: relative; /* относительное расположение */
+  width: 100%; /* ширина */
+  height: 300px; /* высота */
+  margin: 0; /* внешний отступ */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 30px; /* тень */
+  z-index: 999; /* позиционирование */
+}
+.bg1{
+  background-image: url(/images/работа.jpg); /* фон */
+  background-size: cover; /* заполнение фона */
+  background-repeat: no-repeat; /* повторение фона */
+  background-position: 50% 50%; /* размер фона */
+}
+.bg2{
+  background-image: url(/images/италия.jpg); /* фон */
+  background-size: cover; /* заполнение фона */
+  background-repeat: no-repeat; /* повторение фона */
+  background-position: 50% 50%; /* размер фона */
+}
+.bg3{
+  background-image: url(/images/импровизации.jpg); /* фон */
+  background-size: cover; /* заполнение фона */
+  background-repeat: no-repeat; /* повторение фона */
+  background-position: 50% 50%; /* размер фона */
+} 
+.bg4{
+  background-image: url(/images/интервью.jpg); /* фон */
+  background-size: cover;/* заполнение фона */
+  background-repeat: no-repeat;/* повторение фона */
+  background-position: 50% 50%;/* размер фона */
+}
+.bg5{
+  background-image: url(/images/итоги.jpg); /* фон */
+  background-size: cover;/* заполнение фона */
+  background-repeat: no-repeat;/* повторение фона */
+  background-position: 50% 50%;/* размер фона */
+}
+.bg6{
+  background-image: url(/images/почему.jpg); /* фон */
+  background-size: cover;/* заполнение фона */
+  background-repeat: no-repeat;/* повторение фона */
+  background-position: 50% 50%;/* размер фона */
+}
+.bg{ /* блог */
+  margin: 20px 0; /* внешний отступ */
+}
+.blog:hover, 
+.meropriatia:hover{ /* эффект при наведении мышки */
+  top:-5px;  /* смещение */
+}
+.blog:hover .nameBlog,
+.meropriatia:hover .nameMeropriatia{ /* эффект при наведении */
+  background-color: rgba(33, 37, 41,0.7); /* цвет фона */
+  padding: 20px 10px; /* внутренний отступ */
+  animation: blur 1s ease-out infinite; /* анимация */
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px; /* тень */
+  color: #fff; /* цвет шрифта */
+}
+.blogImg{ /* картинка блога */
+  width: 100%; /* ширина */
+  height: 250px; /* высота */
+  margin: 0; /* внешний отступ */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 30px; /* тень */ 
+}
+.nameMeropriatia,
+.nameBlog{ /* название мероприятия и статей */
+  position: absolute; /* абсолютное расположение */
+  margin: 0; /* внешний отступ */
+  word-wrap: break-word; /* автоперенос строки */
+  width: 100%; /* ширина */
+  bottom: 0; /* расположение относительно низа */
+  left: 0; /* расположение относительно левого края */
+  padding: 10px; /* внутренний отступ */
+  line-height: 30px; /* выравнивание по высоте */
+  background-color: rgba(33, 37, 41,1); /* цвет фона */
+  color: #fff; /* цвет шрифта */
+  box-shadow: inset 0px 0px 10px 1px rgba(255,255,255,0.3); /* тень */
+  z-index: 9999; /* позиционирование */
+}
+@keyframes blur {
+  from {
+    text-shadow:
+      0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8
+  }
+}
+.parentMeropr{ /* мероприятия */
+  margin: 20px auto; /* внешний отступ */
+  padding: 20px; /* внутренний отступ */
+  background-color: rgba(208, 173, 120,0.7); /* цвет фона */
+}
+.table2{ /* таблица мероприятия */
+  position: relative; /* относительное расположение */
+  width: 100%; /* ширина */
+  margin-top: 50px; /* внешний отступ */
+}
+.H1{ /* заголовок */
+  text-align: center; /* выравнивание по центру */
+  margin: 40px auto; /* внешний отступ */
+}
+.tableMeropr{ /* таблица в "Мероприятия" */
+  width: 100%; /* ширина */
+  margin-top: 0px; /* внешний отступ */
+  margin-bottom: 30px; /* внешний отступ */
+  position: relative; /* относительное расположение */
+  z-index: 9999; /* позиционирование */
+}
+.tableContact{ /* таблица в "Контакты" */
+  width: 100%; /* ширина */
+  margin-top: 20px; /* внешний отступ */
+  position: relative; /* относительное расположение */
+  z-index: 9999; /* позиционирование */
+}
+.stoimost_raspisanie{ /* таблица в "Стоимость" */
+  width: 100%; /* ширина */
+  margin-top: 0px; /* внешний отступ */
+  position: relative; /* относительное расположение */
+  z-index: 9999; /* позиционирование */
+}
+.tableMeropr table,
+.tableContact table,
+.stoimost_raspisanie table{ /* таблица */
+  border: 1px solid #000; /* граница */
+  margin-top: 0px; /* внешний отступ */
+  font-size: 22px; /* размер шрифта */
+}
+tr, td { /* строчки и столбы таблицы */
+  border: 1px solid #000; /* граница */
+  padding: 5px; /* внутренний отступ */
+}
+.tableTR { /* верх таблицы */
+  background-color: rgba(208, 173, 120, 1); /* цвет фона */
+}
+.tableContent { /* контент таблицы */
+  background-color: rgba(255, 255, 255,0.7); /* цвет фона */
+}
+.backNew { /* отдельный фон на главной */
+  position: relative; /* относительное расположение */
+  background-color: rgba(33, 37, 41,0.7); /* цвет фона */
+  width:100%; /* ширина */
+  margin: 0; /* внешний отступ */
+  padding: 30px 0; /* внутрений отступ */
+}
+#btn1 { /* первая кнопка */
+  position: relative; /* относительное расположение */
+  width: 250px; /* ширина */
+  padding: 4px 14px; /* внутрений отступ */
+  text-decoration: none; /* убираем подчеркивание */
+  color: #fff; /* цвет шрифта */
+  margin: 0 auto; /* внешний отступ */
+  display: block; /* отображаем на экране как блок */
+  font-size: 13px; /* размер шрифта */
+  line-height: 30px; /* выравнивание текста по высоте */
+  box-shadow: rgba(0, 0, 0, 0.701961) 0px 5px 12px; /* тень */
+  background: #161616; /* цвет фона */
+}
+#btn2 { /* вторая кнопка */
+  position: relative; /* относительное расположение */
+  width: 250px; /* ширина */
+  padding: 4px 14px; /* внутрений отступ */
+  text-decoration: none; /* убираем подчеркивание */
+  color: #000; /* цвет шрифта */
+  margin: 20px auto 0; /* внешний отступ */
+  display: block; /* отображаем на экране как блок */
+  font-size: 13px; /* размер шрифта */
+  line-height: 30px; /* выравнивание текста по высоте */
+  box-shadow: rgba(0, 0, 0, 0.701961) 0px 5px 12px; /* тень */
+  background-color: rgba(236, 219, 193,1); /* цвет фона */
+}
+#btn1:hover { /* эффект при наведении */
+  cursor: pointer; /* изменяем курсор */
+  color: #000; /* цвет шрифта */
+  background-color: rgba(236, 219, 193,1); /* цвет фона */
+}
+#btn2:hover { /* эффект при наведении */
+  cursor: pointer; /* изменяем курсор */
+  background: #161616; /* цвет фона */
+  color: #fff; /* цвет шрифта */
+}
+.topGalery { /* отступ в галерее */
+  margin-top: 20px; /* внешний отступ */
+}
+.hovergallery img { /* картинка в фотографиях */
+  opacity: 0.9; /* прозрачность */
+  padding: 5px 0; /* внутрений отступ */
+  width: 330px; /* ширина */
+  height: 250px; /* высота */
+}
+.hovergallery iframe { /* фрейм в фотографиях */
+  width: 500px; /* ширина */
+  height: 300px; /* ширина */
+}
+.txtModal iframe { /* фрейм в модалльном окне */
+  margin: 0 auto; /* внешний отступ */
+  width: 500px; /* ширина */
+  height: 300px; /* ширина */
+}
+.hovergallery a { /* ссылка в фотографии */
+  padding: 0; /* внутрений отступ */
+  width: 0; /* ширина */
+}
+.hovergallery img:hover { /* эффект при наведении */
+  opacity: 1; /* убираем прозрачность */
+  cursor: pointer; /* меняем вид мышки */
+}
+.topbutton { /* кнопка "Наверх" */
+  width:100px; /* ширина */
+  background-color: rgba(208, 173, 120,1); /* цвет фона */
+  text-align:center; /* позиционирование текста */
+  padding:10px 5px; /* внутренний отступ */
+  position:fixed; /* фиксированное расположение */
+  bottom:10px; /* отступ снизу */
+  right:10px; /* отступ от правого края */
+  cursor:pointer; /* вид курсора */
+  color:#000; /* цвет шрифта */
+  font-size:16px; /* размер шрифта */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 20px; /* тень */
+  z-index: 10000; /* позиционирование */
+}
+.topbutton:hover { /* эффект при наведении мышкой */
+  text-decoration: none; /* убираем подчеркивания */
+  color: #000; /* цвет шрифта */
+}
+.modalDialog { /* модальное окно */
+  position: fixed; /* фиксированное расположение */
+  font-family: Arial, Helvetica, sans-serif; /* шрифт */
+  top: 0; /* прижимаем к верху */
+  right: 0; /* прижимаем к правому краю */
+  bottom: 0; /* прижимаем к низу */
+  left: 0; /* прижимаем к левому краю */
+  background: rgba(0,0,0,0.8); /* цвет фона */
+  z-index: 99999; /* позиционирование */
+  -moz-transition: opacity 400ms ease-in; /* плавное появление в Mozilla */
+  transition: opacity 400ms ease-in; /* плавное появление */
+  display: none; /* не отображаем на экране */
+  overflow: hidden; /* отображаем текст внутри блока */
+  pointer-events: none; /* запрет на управление мышкой */
+}
+.topModal{ /* заголовок модального окна */
+  position: relative; /* относительное расположение */
+  text-align: center; /* позиционируем текст по центру */
+  width: 100%; /* ширина */
+  background-color: rgba(208, 173, 120,1); /* цвет фона */
+  margin: 0; /* внешний отступ */
+  padding: 20px 0; /* внутрений отступ */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 12px; /* тень */
+}
+.txtModal{ /* текст в модальном окне */
+  position: relative; /* относительное расположение */
+  margin: 30px 0; /* внешний отступ */
+}
+.modalDialog:target { /* открытие модального окна */
+  display: block; /* показываем модальное окно */
+  pointer-events: auto; /* разрешаем управление мышкой */
+}
+.modalDialog > div { /* модальное окно */
+  width: 80%; /* ширина */
+  height: 100%; /* высота */
+  position: relative; /* относительное расположение */
+  margin: 0 auto; /* внешний отступ */
+  background: rgba(184, 134, 11,1); /* цвет фона */
+  background: -webkit-linear-gradient(rgba(208, 173, 120,1), rgba(255, 255, 255,1)); /* градиент */
+}
+.over{ /* модальное окно */
+  overflow-x: hidden; /* запрет прокрутки по оси х */
+  overflow-y: scroll; /* разрешаем скролить по оси у */
+}
+.over p{ /* текст в модальном окне */
+  padding: 0px 20px; /* внутренний отступ */
+}
+.over::-webkit-scrollbar { /* скрол бар в модальном окне */
+  display: none; /* не отображать на экране */
+}
+.close { /* закрыть модальное окно */
+  background: rgba(60, 60, 60,0); /* цвет фона */
+  position: absolute; /* абсолютное расположение */
+  right: 0; /* пришимаем к правому краю */
+  top: 0; /* прижимаем к верху */
+  width: 100%; /* ширина */
+  height: 100%; /* высота */
+}
+.close:hover { /* наведение мыши на "закрыто модальное окно" */
+  opacity: 0.5; /* уменьшаем прозрачность */
+}
+.modalDialog::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.map{ /* карта */
+  position: relative; /* относительное расположение */
+  margin: 50px 0; /* внешний отступ */
+}
+.cooperationLeft{ /* фото в "Сотрудничество" */
+  position: relative; /* относительное расположение */
+  padding-top: 60px; /* внутренний отступ */
+  max-width: 330px; /* ширина */
+  margin: 0 auto; /* внешний отступ */
+  height: 500px; /* высота */
+  z-index: 9999; /* позиционирование */
+}
+.cooperationRight{ /* текст в "Сотрудничество" */
+  position: relative; /* относительное расположение */
+  margin-top: 60px; /* внешний отступ */
+  padding-left: 20px; /* внутренний отступ */
+  text-align: left; /* позиционирование текста */
+  word-wrap: break-word; /* перенос  */
+  z-index: 9999; /* позиционирование */
+}
+.cooperationRight ul li{ /* строки в списке */
+  list-style-type: circle; /* круг перед текстом */
+  z-index: 9999; /* позиционирование */
+}
+.cooperationCenter{ /* блок для связи в "Сотрудничество" */
+  position: relative; /* относительное расположение */
+  width: 300px; /* ширина */
+  margin: 40px auto; /* внешний отступ */
+  background-color: rgba(208, 173, 120,0.7); /* цвет фона */
+  z-index: 9999; /* позиционирование */
+}
+.col-12 { /* перенастраиваем бутстрап */
+  padding: 0; /* внутренний отступ */
+}
+.col { /* перенастраиваем бутстрап */
+  padding: 0; /* внутренний отступ */
+}
+.mr{ /* мероприятия */
+  padding: 20px; /* внутренний отступ */
+}
+.parent{ /* иконки в контактах */
+  background-color: rgba(208, 173, 120,0.7); /* цвет фона */
+  padding: 20px 0 10px; /* внутренний отступ */
+  transition: all 200ms ease-in; /* анимация */
+  transform: scale(1); /* размер анимации */
+  z-index: 9999; /* позиционирование */
+}
+.parent:hover .icons2{
+  transition: all 200ms ease-in; /* анимация */
+  transform: scale(1.2); /* размер анимации */
+}
+.meropriatia_raspisanie{ /* фото расписания мероприятий */
+  height: 300px; /* высота */
+  z-index: 9999; /* позиционирование */
+}
+.kontakt_raspisanie{ /* фото расписания занятий(контакты) */
+  height: 300px; /* высота */
+  z-index: 9999; /* позиционирование */
+}
+.decor { /* форма */
+  position: relative; /* относительное расположение */
+  width: 400px; /* ширина */
+  margin: 30px auto; /* внешний отступ */
+  padding: 20px; /* внутренний отступ */
+  border-radius: 30px; /* закругляем углы */
+  background-color: rgba(33, 37, 41,1); /* цвет фона */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 30px; /* тень */ 
+  z-index: 9999; /* позиционирование */
+}
+form input,
+form textarea { /* поля ввода текста */
+  display: block; /* блочное отображение */
+  width: 100%; /* ширина */
+  padding: 0 20px; /* внутренний отступ */
+  margin-bottom: 10px; /* внешний отступ */
+  background: #E9EFF6; /* цвет фона */
+  line-height: 40px; /* выравниваем текст по высоте */
+  border-radius: 20px; /* закругляем углы */
+}
+form input[type="submit"] { /* кнопка */
+  margin-top: 30px; /* внешний отступ */
+  background: #E9EFF6; /* цвет фона */
+  color: #000; /* цвет шрифта */
+  font-size: 14px; /* размер шрифта */
+}
+form textarea { /* место для текста */
+  resize: none; /* запрещаем пользователю изменять размеры текстового поля */
+  height: 100px; /* высота */
+}
+form h3 { /* заголовок формы */
+  margin-top: 0; /* внешний отступ */
+  font-weight: 500; /* толщина шрифта */
+  font-size: 24px; /* размер шрифта */
+  padding-bottom: 10px; /* внутренний отступ */
+  color: #fff; /* цвет шрифта */
+}
+.btn{ /* кнопка */
+  padding: 10px 30px; /* внутренний отступ */
+  border: 2px solid #212529;
+  margin: 20px; /* внешний отступ */
+  transition: all 300ms ease; /* анимация */
+  background-color: rgba(208, 173, 120,1); /* цвет фона */
+  box-shadow: 0px 4px 10px 2px rgba(black, 0.2); /* тень */
+}
+.btn:hover{ /* кнопка при наведении */
+  color: white; /* цвет шрифта */
+  background: #212529; /* фон */
+  border: 2px solid rgba(208, 173, 120,1); /* граница */
+  box-shadow:none; /* тень */
+}
+.navBack{ /* фон */
+  background-color: rgba(33, 37, 41,0.7); /* цвет фона */
+}
+.deepshadow{ /* тень заголовков */
+  text-shadow: 
+  0 -1px 0 #000, 
+  0 1px 0 #767474, 
+  0 2px 0 #7b7a7a, 
+  0 3px 0 #828181, 
+  0 4px 0 #8b8a89, 
+  0 5px 0 #949392, 
+  0 6px 0 #9e9c9c, 
+  0 22px 30px rgba(0, 0, 0, 0.9); /* тень */
+}
+.deepshadow2{ /* тень заголовков */
+  text-shadow: 
+  0 -1px 0 #000, 
+  0 1px 0 #9e9c9c, 
+  0 2px 0 #949392, 
+  0 3px 0 #8b8a89, 
+  0 4px 0 #828181, 
+  0 5px 0 #7b7a7a, 
+  0 6px 0 #767474, 
+  0 22px 30px rgba(0, 0, 0, 0.9); /* тень */
+}
+.box { /* блок */
+  position: relative; /* относительное расположение */
+  overflow: hidden; /* прокручивание */
+  height: 300px; /* высота */
+  width: 500px; /* ширина */
+  background: url('/images/jumbo.png') center left no-repeat; /* фон */
+  background-size: cover; /* заполнение фона */
+  cursor: pointer; /* курсор */
+}
+.hover-effect { /* эффект при наведении */
+  position: absolute; /* абсолютное расположение */
+  top: 0; /* прижимаем к верху */
+  left: 0; /* прижимаем к левому краю */
+  width: 100%; /* ширина */
+  height: 100%; /* высота */
+  background: rgba(0, 0, 0, 0.6); /* цвет фона */
+  transition: all 0.3s ease-in-out; /* анимация */
+  opacity: 0; /* прозрачность */
+}
+.box:hover .hover-effect { /* эффект при наведении */
+  opacity: 1; /* прозрачноссть */
+}
+.box:hover .hover-text { /* эффект при наведении */
+  right: 0; /* расположение относительно правого угла */
+}
+.hover-text { /* эффект при наведении на текст */
+  position: absolute; /* абсолютное расположение */
+  right: -100%; /* отображение относительно правого края */
+  bottom: 0; /* граница */
+  display: block; /* блочное отображение */
+  max-width: 100%; /* максимальная ширина */
+  padding: 40px 45px; /* внутренний отступ */
+  color: #fff; /* цвет шрифта */
+  text-decoration: none; /* подчеркивание текста */
+  text-align: center; /* отображение шрифта по центру */
+  line-height: 1.5em; /* высота шрифта */
+  font-size: 15px; /* размер шрифта */
+  font-weight: 300; /* толщина шрифта */
+  text-transform: uppercase; /* перевод текста в капс */
+  transition: all 0.5s ease-in-out; /* анимация */
+}
+.hover-text h1 { /* эффект при наведении на заголовок */
+  font-size: 2em; /* размер шрифта */
+  color: #fff; /* цвет шрифта */
+  font-weight: 500; /* толщина шрифта */
+  padding: 0.6em 0; /* внутренний отступ */
+  margin-bottom: 0.3em; /* внешний отступ */
+  border-bottom: 1px solid #fff; /* нижняя граница */
+}
+.hover-text p { /* эффект при наведении на текст */
+  color: #fff; /* цвет шрифта */
+  line-height: 1.7em; /* высота шрифта */
+  display: inline-block; /* линейное отображение */
+  text-align: center; /* расположение шрифта по центру */
+}
+.dropdown:hover > .dropdown-menu { /* эффект при наведении на пункт меню */
+  display: block; /* блочное отображение */
+  background-color: rgba(33, 37, 41,0.3); /* цвет фона */
+  margin: 0; /* внешний отступ */
+  padding: 0; /* внутренний отступ */
+} 
+.backSait{ /* фон */
+  position: relative; /* относительное расположение */
+  width: 100%; /* ширина */
+  margin-top: 20%; /* внешний отступ */
+  padding-top: 50px; /* внутренний отступ */
+  padding-bottom: 50px; /* внутренний отступ */
+  font-size: 30px; /* рамер шрифта */
+  color: #fff; /* цвет шрифта */
+  background-color: rgba(208, 173, 120,1); /* цвет фона */
+  text-align: center;  /* расположение шрифта по центру */
+}
+.style_prevu_kit{ /* картинки */
+  display: inline-block; /* блочно линейное отображение */
+  border: 0; /* граница */
+  width: 196px; /* ширина */
+  height: 210px; /* высота */
+  position: relative; /* относительное расположение */
+  transition: all 200ms ease-in; /* анимация */
+  transform: scale(1); /* размер анимации */
+  z-index: 99; /* позиционирование */
+}
+.style_prevu_kit img{ /* картинка */
+  width: 196px; /* ширина */
+  height: 210px; /* высота */
+}
+.style_prevu_kit:hover{ /* эффект при наведении картинок */
+  box-shadow: 0px 0px 150px #000000; /* тень */
+  transition: all 200ms ease-in; /* анимация */
+  transform: scale(1.2); /* размер анимации */
+  z-index: 99; /* позиционирование */
+}
